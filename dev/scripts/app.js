@@ -25,7 +25,7 @@ class App extends React.Component {
         }
       ],
 
-      nytPosts: [
+      pixabayPosts: [
         {
           title: "",
           url: ""
@@ -33,7 +33,7 @@ class App extends React.Component {
       ]
     };
     this.callToReddit = this.callToReddit.bind(this);
-    this.callToNYT = this.callToNYT.bind(this);
+    this.callToPixabay = this.callToPixabay.bind(this);
     this.handleChange = this.handleChange.bind(this);    
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -57,8 +57,6 @@ class App extends React.Component {
           ) {
             resultArray.push(redditPostObject);
           }
-
-          // console.log(redditPostObject.url.slice(-1))
         });
 
         this.setState({ redditPosts: resultArray });
@@ -91,27 +89,27 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-  callToNYT() {
-    const NYT = "https://api.nytimes.com/svc/";
+  callToPixabay() {
     axios
-      .get(`${NYT}search/v2/articlesearch.json`, {
+      .get(`https://pixabay.com/api/`, {
         params: {
-          "api-key": "0613b7cda7b944cfb0dafa2a215ab0fb",
+          key: '9342490-bae298122ef1064b7551d5c57',
           q: this.state.input
         }
       })
       .then(res => {
         console.log(res);
-        const nytResults = res.data.response.docs;
+        const pixabayResults = res.data.hits;
 
         const resultArray = [];
-        nytResults.map(res => {
-          const nytPostObject = { title: res.title, url: res.multimedia[1].url, abstract: res.abstract };
-          resultArray.push(nytPostObject);
-          this.setState({ nytPosts: resultArray });
+        pixabayResults.map(res => {
+          const pixabayPostObject = { url: res.previewURL }
+          // const nytPostObject = { title: res.title, url: res.multimedia[1].url, abstract: res.abstract };
+          resultArray.push(pixabayPostObject);
+          this.setState({ pixabayPosts: resultArray });
         });
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
 
 
@@ -125,7 +123,7 @@ class App extends React.Component {
     e.preventDefault();
     // this.callToReddit(this.state.input);
     // this.callToGiphy(this.state.input);
-    this.callToNYT(this.state.input);
+    this.callToPixabay(this.state.input);
   }
 
   render() {
@@ -145,12 +143,12 @@ class App extends React.Component {
         </Column>
 
         <Column>
-          {this.state.nytPosts.map(post => {
+          {this.state.pixabayPosts.map(post => {
             return (
               <Content
-                title={post.title}
+                // title={post.title}
                 url={post.url}
-                abstract={post.abstract}
+                // abstract={post.abstract}
               />
             );
           })}
