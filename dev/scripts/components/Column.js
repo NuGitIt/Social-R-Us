@@ -3,9 +3,9 @@ import React from 'react';
 class Column extends React.Component {
     render() { 
         return (
-        <React.Fragment>
+        <div className="column">
             {this.props.children}
-        </React.Fragment>
+        </div>
         )
     }
 }
