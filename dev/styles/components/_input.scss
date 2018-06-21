@@ -1,0 +1,28 @@
+.form {
+    width: 100%;
+    padding: 30px;
+
+    input {
+        width: 70%;
+        padding: 0 10px;
+        border: lightgrey 3px solid;
+        border-radius: 5px 0 0 5px;
+        border-right: none;
+        color: $reddit;
+    }
+
+    button {
+        width: 30%;
+        border: lightgrey 3px solid;
+        border-radius: 0 5px 5px 0;
+        background: #222;
+        color: white;
+    }
+
+    input,
+    button {
+        height: 40px;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}

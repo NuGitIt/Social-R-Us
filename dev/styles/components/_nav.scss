@@ -1,0 +1,17 @@
+.social-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    
+    ul {
+        background: red;
+
+        li {
+            background: blue;
+            padding: 20px 10px;
+        }
+    }
+}
