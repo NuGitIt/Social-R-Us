@@ -14,8 +14,9 @@ class Form extends React.Component {
     }
     render (){
         return ( 
-            <form onSubmit={this.props.handleSubmit}>
-                <input type="text" placeholder="search" value={this.props.input} onChange={this.getHandleChange}/>
+            <form onSubmit={this.props.handleSubmit} className="form">
+                <label htmlFor="searchInput" className="visuallyhidden">Type Search</label>
+                <input type="text" placeholder="search" id="searchInput" name="searchInput" value={this.props.input} onChange={this.getHandleChange}/>
                 <button type="submit">Submit</button>
             </form>
         )

@@ -2,11 +2,12 @@ import React from 'react';
 
 const Content = (props) => {
     return (
-        <React.Fragment>
+        <div className={props.class}>
             <h2>{props.title}</h2>
-            <img src={props.url} style={{'width':'100px'}}/>
-            <div>{props.abstract}</div>
-        </React.Fragment>
+            <a href={props.pageUrl} target="_blank">
+            <img src={props.imageUrl} style={{'width':'100px'}}/>
+            </a>
+        </div>
     )
 }
 export default Content;
