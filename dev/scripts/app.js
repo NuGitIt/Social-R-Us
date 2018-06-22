@@ -87,16 +87,16 @@ class App extends React.Component {
             class: 'giphy'
           };
           resultArray.push(giphyPostObject);
-          if (resultArray.length === 0) {
-            this.setState({
-              emptyResults: true,
-            })
-          }
-          this.setState({ 
-            giphyPosts: resultArray,
-            redditPosts: [],
-            pixabayPosts: []
-          });
+        })
+        if (resultArray.length === 0) {
+          this.setState({
+            emptyResults: true,
+          })
+        }
+        this.setState({
+          giphyPosts: resultArray,
+          redditPosts: [],
+          pixabayPosts: []
         });
       })
       .catch(err => console.log(err));
@@ -120,21 +120,20 @@ class App extends React.Component {
             class: 'pixabay'
           }
         resultArray.push(pixabayPostObject);
-        if (resultArray.length === 0) {
-          this.setState({
-            emptyResults: true,
-          })
-        }
-        this.setState({ 
-          pixabayPosts: resultArray, 
-          redditPosts: [],
-          giphyPosts: []
-        });
-      });
+      })
+      if (resultArray.length === 0) {
+        this.setState({
+          emptyResults: true,
+        })
+      }
+      this.setState({
+        pixabayPosts: resultArray,
+        redditPosts: [],
+        giphyPosts: []
+      });;
     })
     .catch(err => console.log(err));
   }
-
 
   handleChange(value) {
     this.setState({
@@ -152,7 +151,7 @@ class App extends React.Component {
       this.callToPixabay(this.state.input);
     }
     this.setState({
-      emptyResults: false
+      emptyResults: false,
   })
 }
 
@@ -190,9 +189,9 @@ class App extends React.Component {
     return <main>
         <header className="header">
           <a href="index.html">
-            <h3>
+            <h1>
               <span>Social</span>-<span>R</span>-<span>Us</span>
-            </h3>
+            </h1>
           </a>
         </header>
 
@@ -217,19 +216,13 @@ class App extends React.Component {
         <div>{this.state.emptyResults ? <NotFound /> : ""}</div>
 
         {this.state.pixabayPosts.length !== 0 || this.state.giphyPosts.length !== 0 || this.state.redditPosts.length !== 0 ? <div>
-            <Column>
+            <Column social={this.state.socialMediaSelected}>
               {this.state.redditPosts.map(post => {
                 return <Content title={post.title} imageUrl={post.imageUrl} pageUrl={post.pageUrl} class={post.class} />;
               })}
-            </Column>
-
-            <Column>
               {this.state.giphyPosts.map(post => {
                 return <Content title={post.title} imageUrl={post.imageUrl} pageUrl={post.pageUrl} class={post.class} />;
               })}
-            </Column>
-
-            <Column>
               {this.state.pixabayPosts.map(post => {
                 return <Content imageUrl={post.imageUrl} pageUrl={post.pageUrl} class={post.class} />;
               })}

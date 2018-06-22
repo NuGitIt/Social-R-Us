@@ -4,7 +4,7 @@
     text-align: center;
     padding: 15px 0;
 
-    h3 {
+    h1 {
         text-transform: uppercase;
         font-family: $shri;
         font-size: 4rem;
@@ -21,6 +21,10 @@
 
         & span:last-child {
             color: $pixa;
+        }
+
+        @media (min-width: 1000px) {
+            font-size: 6rem;
         }
     }
 }

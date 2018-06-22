@@ -18,7 +18,7 @@ class Form extends React.Component {
             <form onSubmit={this.props.handleSubmit} className="form" required>
                 <label htmlFor="searchInput" className="visuallyhidden">Type Search</label>
                 <input type="text" placeholder="search" id="searchInput" name="searchInput" value={this.props.input} onChange={this.getHandleChange}/>
-                <button type="submit">Submit</button>
+                <button type="submit">Search</button>
             </form>
         </div>
         )
