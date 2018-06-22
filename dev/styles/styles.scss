@@ -2,9 +2,9 @@
 @import 'utils';
 @import 'typography';
 @import 'components/header';
-@import 'components/input';
+@import 'components/form';
 @import 'components/nav';
-@import 'components/main';
+@import 'components/content';
 
 html {
     font-size: 62.5%;
@@ -21,4 +21,8 @@ li {
 
 main {
     position: relative;
+}
+
+a {
+    text-decoration: none;
 }
