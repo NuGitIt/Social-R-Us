@@ -163,21 +163,21 @@ class App extends React.Component {
     let social = '';
     if (e.target.id.includes('redditButton')) {
         social = 'reddit'; 
-        document.getElementById('redditButton').style.cssText = "color:white";
+        document.getElementById('redditButton').style.cssText = "color:#565554";
         document.getElementById('giphyButton').style.cssText = "color:black";
         document.getElementById('pixaButton').style.cssText = "color:black";
         this.callToReddit(this.state.input);
     } else if (e.target.id.includes('giphyButton')) {
         social = 'giphy';
         document.getElementById('redditButton').style.cssText = "color:black";
-        document.getElementById('giphyButton').style.cssText = "color:white";
+        document.getElementById('giphyButton').style.cssText = "color:#565554";
         document.getElementById('pixaButton').style.cssText = "color:black";
-        this.callToGiphy(this.state.input);
+        this.callToGiphy(this.state.input)
     } else if (e.target.id.includes('pixaButton')) {
         social = 'pixabay';
         document.getElementById('redditButton').style.cssText = "color:black";
         document.getElementById('giphyButton').style.cssText = "color:black";
-        document.getElementById('pixaButton').style.cssText = "color:white";
+        document.getElementById('pixaButton').style.cssText = "color:#565554";
         this.callToPixabay(this.state.input);
     }
 
@@ -231,6 +231,9 @@ class App extends React.Component {
               })}
             </Column>
           </div> : ""}
+        <footer class="footer">
+        <p>Made by <span><a href="http://www.liyinglim.com" target="_blank">Li Ying Lim</a></span>, <span><a href="http://www.michaelyiu.com" target="_blank">Michael Yiu</a></span> and <span><a href="http://www.wesdevs.com" target="_blank">Wesley Ho</a></span> &copy; 2018</p>
+        </footer>
       </main>;
   }
 }

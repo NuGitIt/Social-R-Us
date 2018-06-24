@@ -5,6 +5,7 @@
 @import 'components/form';
 @import 'components/nav';
 @import 'components/content';
+@import 'components/footer';
 
 html {
     font-size: 62.5%;
@@ -23,6 +24,15 @@ main {
     position: relative;
 }
 
-a {
+a,
+a:focus,
+a:hover,
+a:visited {
+    color: inherit;
     text-decoration: none;
+}
+
+img { 
+    object-fit: contain;
+    width: 100%;
 }
