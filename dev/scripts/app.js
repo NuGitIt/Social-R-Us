@@ -25,7 +25,7 @@ class App extends React.Component {
   }
   callToReddit() {
     axios
-      .get(`http://www.reddit.com/r/all/search/.json`, {
+      .get(`https://www.reddit.com/r/all/search/.json`, {
       params: {
         q: this.state.input
       }}
