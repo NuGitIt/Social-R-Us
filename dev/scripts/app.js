@@ -33,7 +33,7 @@ class App extends React.Component {
       .then(res => {
         const redditResults = res.data.data.children;
         const resultArray = [];
-        console.log(redditResults);
+        // console.log(redditResults);
         
         redditResults.map(res => {
         if (res.data.hasOwnProperty('preview') && !res.data.url.includes('gfycat')) {
@@ -159,7 +159,7 @@ class App extends React.Component {
 }
 
   onClickChangeSocial(e) {
-    console.log(e.target.id);
+    // console.log(e.target.id);
     let social = '';
     if (e.target.id.includes('redditButton')) {
         social = 'reddit'; 
@@ -231,7 +231,7 @@ class App extends React.Component {
               })}
             </Column>
           </div> : ""}
-        <footer class="footer">
+        <footer className="footer">
         <p>Made by <span><a href="http://www.liyinglim.com" target="_blank">Li Ying Lim</a></span>, <span><a href="http://www.michaelyiu.com" target="_blank">Michael Yiu</a></span> and <span><a href="http://www.wesdevs.com" target="_blank">Wesley Ho</a></span> &copy; 2018</p>
         </footer>
       </main>;
