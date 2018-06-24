@@ -149,7 +149,10 @@ class App extends React.Component {
       this.callToGiphy(this.state.input);
     } else if (this.state.socialMediaSelected === 'pixabay') {
       this.callToPixabay(this.state.input);
-    }
+    };
+
+    document.getElementById('socialNav').style.cssText="display: flex";
+
     this.setState({
       emptyResults: false,
   })
@@ -197,7 +200,7 @@ class App extends React.Component {
 
         <Form handleSubmit={this.handleSubmit} value={this.state.input} handleChange={this.handleChange} />
 
-        <nav className="social-nav">
+        <nav className="social-nav" id="socialNav">
           <ul>
             <li className="buttons reddit-button" onClick={this.onClickChangeSocial}>
               <a href="#" id="redditButton">

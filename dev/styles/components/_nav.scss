@@ -1,24 +1,28 @@
 .social-nav {
     position: fixed;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
+    top: 45%;
+    display: none;
     flex-direction: column;
     
-    ul, li {
+    ul,
+    li {
         padding: 0;
         margin:0;
+
         a {
             text-align: center;
             color: $black;
             text-decoration: none;
             display:block;
-            padding: 20px 10px;
-            clip-path:polygon(0 34%, 100% 1%, 100% 100%, 0 68%);
+            padding: 20px 5px 20px 8px;
+            clip-path:polygon(0 23%, 100% 0%, 100% 100%, 0px 80%);
             -webkit-clip-path: polygon(0 34%, 100% 1%, 100% 100%, 0 68%);
             box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); 
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+
+
             @media (min-width: 500px) {
                 font-size: 1.5rem;
             }
@@ -31,26 +35,26 @@
 
 
     #redditButton {
-        background: $reddit;
+        background: lighten($reddit, 10%);
         color: $white;
         &:focus,
         &:hover {
-            background:lighten($reddit, 5%);
+            background:lighten($reddit, 20%);
         }
     }
 
     #giphyButton {
-        background: $giphy;
+        background: lighten($giphy, 10%);
         &:focus,
         &:hover {
-            background:lighten($giphy, 5%);
+            background:lighten($giphy, 20%);
         }
     }
     #pixaButton {
-        background: $pixa;
+        background: lighten($pixa, 10%);
         &:focus,
         &:hover {
-            background:lighten($pixa, 2%);
+            background:lighten($pixa, 20%);
         }
     }
 }
