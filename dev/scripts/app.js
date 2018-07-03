@@ -195,6 +195,7 @@ class App extends React.Component {
             <h1>
               <span>Social</span>-<span>R</span>-<span>Us</span>
             </h1>
+            <h2>Your One-Stop Search to Reddit, Giphy and Pixabay!</h2>
           </a>
         </header>
 
