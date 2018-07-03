@@ -163,6 +163,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     @media (min-width: 1000px) {
       .header h1 {
         font-size: 6rem; } }
+  .header h2 {
+    color: #FAFAFA; }
 
 .wrapper {
   width: 100%;
